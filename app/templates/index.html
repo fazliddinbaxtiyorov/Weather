@@ -1,0 +1,117 @@
+{% load static %}
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Ob-Havo</title>
+     <link rel="icon" type="image/x-icon" href="https://www.freeiconspng.com/thumbs/weather-icon-png/weather-icon-png-2.png">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<header class="top_home">
+    <div class="home_name">
+        <img style="height:88px;weight:88px;" src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7912589/weather-icon-md.png" alt="">
+        <h1 style="padding-top: 40px;">Ob-Havo</h1>
+    </div>
+    <div class="cites">
+        <a href="{% url 'tashkent' %}">Toshkent</a>
+        <a href="{% url 'andijan' %}">Andijon</a>
+        <a href="{% url 'buxoro' %}">Buxoro</a>
+        <a href="{% url 'urganch' %}">Urganch</a>
+        <a href="{% url 'xiva' %}">Xiva</a>
+        <a href="{% url 'guliston' %}">Guliston</a>
+        <a href="{% url 'namangan' %}">Namangan</a>
+        <a href="{% url 'jizzah' %}">Jizzax</a>
+        <a href="{% url 'termiz' %}">Termiz</a>
+        <a href="{% url 'samarqand' %}">Samarqand</a>
+        <a href="{% url 'fargona' %}">Farg'ona</a>
+        <a href="{% url 'navoiy' %}">Navoiy</a>
+        <a href="{% url 'nukus' %}">Nukus</a>
+    </div>
+</header>
+<div class="all" style="display: flex; justify-content: center;background-color: #B3E5FC;">
+    <div class="container">
+<div  class="container-fluid" id="current-weather">
+<div class="home">
+<div class="col-md-4 col-sm-5">
+<div class="left">
+<h1 class="city">{{ city }}</h1>
+
+<div style="display:flex;flex-direction: wrap;" class="icons">
+{% if havo|upper == 'BULUTLI' %}
+    <svg width="48" height="48" viewBox="0 0 48 48" style="width: 100px; height: 100px;"><path fill="#BBDEFB" d="M29.5 12A8.5 8.5 0 1 0 29.5 29A8.5 8.5 0 1 0 29.5 12Z"></path><path fill="#BBDEFB" d="M37 21.893A7 7 0 1 0 37 35.893 7 7 0 1 0 37 21.893zM11 22A7 7 0 1 0 11 36 7 7 0 1 0 11 22z"></path><path fill="#BBDEFB" d="M17.5 15A6.5 6.5 0 1 0 17.5 28A6.5 6.5 0 1 0 17.5 15Z"></path><path fill="#BBDEFB" d="M25 19.893A7 7 0 1 0 25 33.893A7 7 0 1 0 25 19.893Z"></path><path fill="#BBDEFB" d="M7,32c0,2.209,1.791,4,4,4h25c2.209,0,4-1.791,4-4v-1c0-2.209-1.791-4-4-4H11c-2.209,0-4,1.791-4,4V32z"></path></svg>
+{% endif %}
+{% if havo|upper == "YOMG'IR" %}
+    <svg width="48" height="48" viewBox="0 0 48 48" style="width: 100px; height: 100px;"><path fill="#BBDEFB" d="M29.5 5A8.5 8.5 0 1 0 29.5 22A8.5 8.5 0 1 0 29.5 5Z"></path><path fill="#BBDEFB" d="M37 14.893A7 7 0 1 0 37 28.893 7 7 0 1 0 37 14.893zM11 15A7 7 0 1 0 11 29 7 7 0 1 0 11 15z"></path><path fill="#BBDEFB" d="M17.5 8A6.5 6.5 0 1 0 17.5 21A6.5 6.5 0 1 0 17.5 8Z"></path><path fill="#BBDEFB" d="M25 12.893A7 7 0 1 0 25 26.893A7 7 0 1 0 25 12.893Z"></path><path fill="#BBDEFB" d="M7,25c0,2.209,1.791,4,4,4h25c2.209,0,4-1.791,4-4v-1c0-2.209-1.791-4-4-4H11c-2.209,0-4,1.791-4,4V25z"></path><g><path fill="#2196F3" d="M34.95 37.15c-1.132 1.133-2.968 1.133-4.101 0-1.134-1.131-1.133-2.969 0-4.1C31.982 31.917 37 31 37 31S36.082 36.02 34.95 37.15zM23.95 41.15c-1.132 1.132-2.968 1.132-4.101 0-1.133-1.133-1.132-2.969 0-4.101 1.133-1.133 6.152-2.05 6.152-2.05S25.082 40.02 23.95 41.15zM13.95 37.15c-1.132 1.133-2.968 1.133-4.101 0-1.133-1.131-1.132-2.969 0-4.1 1.132-1.133 6.151-2.05 6.151-2.05S15.082 36.02 13.95 37.15z"></path></g></svg>
+{% endif %}
+{% if havo|upper  == 'QOR' %}
+    <svg width="48" height="48" viewBox="0 0 48 48" style="width: 100px; height: 100px;"><path fill="#BBDEFB" d="M29.5 5A8.5 8.5 0 1 0 29.5 22A8.5 8.5 0 1 0 29.5 5Z"></path><path fill="#BBDEFB" d="M37 14.893A7 7 0 1 0 37 28.893 7 7 0 1 0 37 14.893zM11 15A7 7 0 1 0 11 29 7 7 0 1 0 11 15z"></path><path fill="#BBDEFB" d="M17.5 8A6.5 6.5 0 1 0 17.5 21A6.5 6.5 0 1 0 17.5 8Z"></path><path fill="#BBDEFB" d="M25 12.893A7 7 0 1 0 25 26.893A7 7 0 1 0 25 12.893Z"></path><path fill="#BBDEFB" d="M7,25c0,2.209,1.791,4,4,4h25c2.209,0,4-1.791,4-4v-1c0-2.209-1.791-4-4-4H11c-2.209,0-4,1.791-4,4V25z"></path><g><path fill="#2196F3" d="M23 34H25V43H23z"></path><path fill="#2196F3" d="M23 33.999H25V42.999H23z" transform="rotate(120.471 24 38.499)"></path><path fill="#2196F3" d="M23.001 34H24.999000000000002V43H23.001z" transform="rotate(60.679 24 38.5)"></path><path fill="#2196F3" d="M10 31H12V40H10z"></path><path fill="#2196F3" d="M10 30.999H12V39.998999999999995H10z" transform="rotate(120.444 11 35.5)"></path><path fill="#2196F3" d="M10.001 31H11.998999999999999V40H10.001z" transform="rotate(60.679 11 35.5)"></path><path fill="#2196F3" d="M36 31H38V40H36z"></path><path fill="#2196F3" d="M35.999 30.998H37.999V39.998000000000005H35.999z" transform="rotate(120.458 36.999 35.5)"></path><path fill="#2196F3" d="M36 31H37.998V40.001H36z" transform="rotate(60.679 36.999 35.5)"></path></g></svg>
+{% endif %}
+{% if havo|upper == 'OCHIQ HAVO' %}
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48" style="width: 100px; height: 100px;"><circle cx="24" cy="24" r="16" fill="#f2ca00"></circle><path fill="#324561" d="M24,6c-0.553,0-1-0.447-1-1V1c0-0.553,0.447-1,1-1s1,0.447,1,1v4C25,5.553,24.553,6,24,6z"></path><path fill="#324561" d="M5,25H1c-0.553,0-1-0.447-1-1s0.447-1,1-1h4c0.553,0,1,0.447,1,1S5.553,25,5,25z"></path><path fill="#324561" d="M7.736,41.264c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414l2.829-2.829	c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414l-2.829,2.829C8.248,41.166,7.992,41.264,7.736,41.264z"></path><path fill="#324561" d="M10.565,11.565c-0.256,0-0.512-0.098-0.707-0.293L7.029,8.443c-0.391-0.391-0.391-1.023,0-1.414	s1.023-0.391,1.414,0l2.829,2.829c0.391,0.391,0.391,1.023,0,1.414C11.077,11.468,10.821,11.565,10.565,11.565z"></path><path fill="#324561" d="M37.435,11.565c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414l2.829-2.829	c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414l-2.829,2.829C37.946,11.468,37.69,11.565,37.435,11.565z"></path><path fill="#324561" d="M47,25h-4c-0.553,0-1-0.447-1-1s0.447-1,1-1h4c0.553,0,1,0.447,1,1S47.553,25,47,25z"></path><path fill="#324561" d="M40.264,41.264c-0.256,0-0.512-0.098-0.707-0.293l-2.829-2.829c-0.391-0.391-0.391-1.023,0-1.414	s1.023-0.391,1.414,0l2.829,2.829c0.391,0.391,0.391,1.023,0,1.414C40.775,41.166,40.52,41.264,40.264,41.264z"></path><path fill="#324561" d="M24,48c-0.553,0-1-0.447-1-1v-4c0-0.553,0.447-1,1-1s1,0.447,1,1v4C25,47.553,24.553,48,24,48z"></path></svg>
+{% endif %}
+{% if havo|upper  == "QOR ARALASH YOMG'IR" %}
+    <img width="48" height="48" style="width: 100px; height: 100px;" src="https://img.icons8.com/color/48/sleet.png" alt="sleet"/>
+{% endif %}
+<h2 class="today">{{ temptoday }}</h2>
+</div>
+<!--<h3>{{ today }}</h3>-->
+<h2 style="font-size: 1.6rem;text-align: left;color: rgb(123, 152, 178);padding-top: 20px;">{{ havo }}</h2>
+</div>
+</div>
+<div class="malumotlar">
+      <h3><svg style="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-droplet-fill" viewBox="0 0 16 16"><path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6M6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13"/></svg> Namlik:   {{ namlik }}</h3>
+      <h3><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-wind" viewBox="0 0 16 16"><path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5m-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2M0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5"/></svg> Shamol:   {{ shamol }} m/s</h3>
+      <h3><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16"><path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4M3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.39.39 0 0 0-.029-.518z"/><path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A8 8 0 0 1 0 10m8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3"/></svg> Bosim:  {{ bosim }} mm</h3>
+      <h3><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-sunrise" viewBox="0 0 16 16"><path d="M7.646 1.146a.5.5 0 0 1 .708 0l1.5 1.5a.5.5 0 0 1-.708.708L8.5 2.707V4.5a.5.5 0 0 1-1 0V2.707l-.646.647a.5.5 0 1 1-.708-.708zM2.343 4.343a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707m11.314 0a.5.5 0 0 1 0 .707l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0M8 7a3 3 0 0 1 2.599 4.5H5.4A3 3 0 0 1 8 7m3.71 4.5a4 4 0 1 0-7.418 0H.499a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10m13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/></svg>Quyosh chiqishi:  {{chiq}}</h3>
+      <h3><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-sunset" viewBox="0 0 16 16"><path d="M7.646 4.854a.5.5 0 0 0 .708 0l1.5-1.5a.5.5 0 0 0-.708-.708l-.646.647V1.5a.5.5 0 0 0-1 0v1.793l-.646-.647a.5.5 0 1 0-.708.708zm-5.303-.51a.5.5 0 0 1 .707 0l1.414 1.413a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .706l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM8 7a3 3 0 0 1 2.599 4.5H5.4A3 3 0 0 1 8 7m3.71 4.5a4 4 0 1 0-7.418 0H.499a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10m13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/></svg>Quyosh botishi:  {{bot}}</h3>
+     </div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row" style="padding: 2px; display: flex; justify-content: center;">
+  <div class="col-md-3 col-sm-6 day-weather-box">
+    <div class="col-sm-12 day-weather-inner-box">
+      <div class="col-sm-8 forecast-main">
+        <p id="forecast-day-1-name"></p>
+        <div class="row">
+          <h1 style="text-align:center;" id="forecast-day-1-main">Haftalik Ob-Havo Ma'lumoti</h1>
+            <br>
+            <div style="display: flex; flex-direction: row; justify-content: space-around;">
+                {% for i in days%}<h4>{{ i }}</h4>{% endfor %}
+            </div>
+            <div style="display:flex;flex-direction:wrap;justify-content:space-around;" >
+                {% for s in tavsif%}{% if s|upper == 'BULUTLI' %}
+                    <svg width="60" height="60" viewBox="0 0 48 48"><path fill="#BBDEFB" d="M29.5 12A8.5 8.5 0 1 0 29.5 29A8.5 8.5 0 1 0 29.5 12Z"></path><path fill="#BBDEFB" d="M37 21.893A7 7 0 1 0 37 35.893 7 7 0 1 0 37 21.893zM11 22A7 7 0 1 0 11 36 7 7 0 1 0 11 22z"></path><path fill="#BBDEFB" d="M17.5 15A6.5 6.5 0 1 0 17.5 28A6.5 6.5 0 1 0 17.5 15Z"></path><path fill="#BBDEFB" d="M25 19.893A7 7 0 1 0 25 33.893A7 7 0 1 0 25 19.893Z"></path><path fill="#BBDEFB" d="M7,32c0,2.209,1.791,4,4,4h25c2.209,0,4-1.791,4-4v-1c0-2.209-1.791-4-4-4H11c-2.209,0-4,1.791-4,4V32z"></path></svg>
+                {% endif %}
+                {% if s|upper == "YOMG'IR" %}
+                    <svg  width="60" height="60" viewBox="0 0 48 48"><path fill="#BBDEFB" d="M29.5 5A8.5 8.5 0 1 0 29.5 22A8.5 8.5 0 1 0 29.5 5Z"></path><path fill="#BBDEFB" d="M37 14.893A7 7 0 1 0 37 28.893 7 7 0 1 0 37 14.893zM11 15A7 7 0 1 0 11 29 7 7 0 1 0 11 15z"></path><path fill="#BBDEFB" d="M17.5 8A6.5 6.5 0 1 0 17.5 21A6.5 6.5 0 1 0 17.5 8Z"></path><path fill="#BBDEFB" d="M25 12.893A7 7 0 1 0 25 26.893A7 7 0 1 0 25 12.893Z"></path><path fill="#BBDEFB" d="M7,25c0,2.209,1.791,4,4,4h25c2.209,0,4-1.791,4-4v-1c0-2.209-1.791-4-4-4H11c-2.209,0-4,1.791-4,4V25z"></path><g><path fill="#2196F3" d="M34.95 37.15c-1.132 1.133-2.968 1.133-4.101 0-1.134-1.131-1.133-2.969 0-4.1C31.982 31.917 37 31 37 31S36.082 36.02 34.95 37.15zM23.95 41.15c-1.132 1.132-2.968 1.132-4.101 0-1.133-1.133-1.132-2.969 0-4.101 1.133-1.133 6.152-2.05 6.152-2.05S25.082 40.02 23.95 41.15zM13.95 37.15c-1.132 1.133-2.968 1.133-4.101 0-1.133-1.131-1.132-2.969 0-4.1 1.132-1.133 6.151-2.05 6.151-2.05S15.082 36.02 13.95 37.15z"></path></g></svg>
+                {% endif %}
+                {% if s|upper  == 'QOR' %}
+                    <svg width="60" height="60" viewBox="0 0 48 48"><path fill="#BBDEFB" d="M29.5 5A8.5 8.5 0 1 0 29.5 22A8.5 8.5 0 1 0 29.5 5Z"></path><path fill="#BBDEFB" d="M37 14.893A7 7 0 1 0 37 28.893 7 7 0 1 0 37 14.893zM11 15A7 7 0 1 0 11 29 7 7 0 1 0 11 15z"></path><path fill="#BBDEFB" d="M17.5 8A6.5 6.5 0 1 0 17.5 21A6.5 6.5 0 1 0 17.5 8Z"></path><path fill="#BBDEFB" d="M25 12.893A7 7 0 1 0 25 26.893A7 7 0 1 0 25 12.893Z"></path><path fill="#BBDEFB" d="M7,25c0,2.209,1.791,4,4,4h25c2.209,0,4-1.791,4-4v-1c0-2.209-1.791-4-4-4H11c-2.209,0-4,1.791-4,4V25z"></path><g><path fill="#2196F3" d="M23 34H25V43H23z"></path><path fill="#2196F3" d="M23 33.999H25V42.999H23z" transform="rotate(120.471 24 38.499)"></path><path fill="#2196F3" d="M23.001 34H24.999000000000002V43H23.001z" transform="rotate(60.679 24 38.5)"></path><path fill="#2196F3" d="M10 31H12V40H10z"></path><path fill="#2196F3" d="M10 30.999H12V39.998999999999995H10z" transform="rotate(120.444 11 35.5)"></path><path fill="#2196F3" d="M10.001 31H11.998999999999999V40H10.001z" transform="rotate(60.679 11 35.5)"></path><path fill="#2196F3" d="M36 31H38V40H36z"></path><path fill="#2196F3" d="M35.999 30.998H37.999V39.998000000000005H35.999z" transform="rotate(120.458 36.999 35.5)"></path><path fill="#2196F3" d="M36 31H37.998V40.001H36z" transform="rotate(60.679 36.999 35.5)"></path></g></svg>
+                {% endif %}
+                {% if s|upper == 'OCHIQ HAVO' %}
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#f2ca00"></circle><path fill="#324561" d="M24,6c-0.553,0-1-0.447-1-1V1c0-0.553,0.447-1,1-1s1,0.447,1,1v4C25,5.553,24.553,6,24,6z"></path><path fill="#324561" d="M5,25H1c-0.553,0-1-0.447-1-1s0.447-1,1-1h4c0.553,0,1,0.447,1,1S5.553,25,5,25z"></path><path fill="#324561" d="M7.736,41.264c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414l2.829-2.829	c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414l-2.829,2.829C8.248,41.166,7.992,41.264,7.736,41.264z"></path><path fill="#324561" d="M10.565,11.565c-0.256,0-0.512-0.098-0.707-0.293L7.029,8.443c-0.391-0.391-0.391-1.023,0-1.414	s1.023-0.391,1.414,0l2.829,2.829c0.391,0.391,0.391,1.023,0,1.414C11.077,11.468,10.821,11.565,10.565,11.565z"></path><path fill="#324561" d="M37.435,11.565c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414l2.829-2.829	c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414l-2.829,2.829C37.946,11.468,37.69,11.565,37.435,11.565z"></path><path fill="#324561" d="M47,25h-4c-0.553,0-1-0.447-1-1s0.447-1,1-1h4c0.553,0,1,0.447,1,1S47.553,25,47,25z"></path><path fill="#324561" d="M40.264,41.264c-0.256,0-0.512-0.098-0.707-0.293l-2.829-2.829c-0.391-0.391-0.391-1.023,0-1.414	s1.023-0.391,1.414,0l2.829,2.829c0.391,0.391,0.391,1.023,0,1.414C40.775,41.166,40.52,41.264,40.264,41.264z"></path><path fill="#324561" d="M24,48c-0.553,0-1-0.447-1-1v-4c0-0.553,0.447-1,1-1s1,0.447,1,1v4C25,47.553,24.553,48,24,48z"></path></svg>
+                {% endif %}
+                {% if s|upper  == "QOR ARALASH YOMG'IR" %}
+                    <img   width="60" height="60" src="https://img.icons8.com/color/48/sleet.png" alt="sleet"/>
+                {% endif %}{% endfor %}
+            </div>
+                <div style="display: flex; flex-direction: row; justify-content: space-around;">
+                {% for y in yogin %}<h4><svg style="fill: rgb(37, 150, 190);" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-droplet-fill" viewBox="0 0 16 16"><path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6M6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13"/></svg> {{ y }}</h4>{% endfor %}
+                </div>
+                <div style="display: flex; flex-direction: row; justify-content: space-around;">
+                {% for t in temp%}<h4>{{ t }}</h4>{% endfor %}
+                </div>
+            </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+    <span style="display:flex;justify-content:center;margin-top:70px;">© ob-havo-viloyat.uz 2024</span>
+        <p style="padding:10px;display:flex;justify-content:center;font-size: 1rem;text-align: center;color: rgb(47, 111, 138);">Devoloped By:  <a style="color: rgb(26, 90, 115);" href="https://fazliddinbaxtiyorov.uz/"> Fazliddin Baxtiyorov</a></p>
+</div>
+</div>
+</div>
+</body>
+</html>
