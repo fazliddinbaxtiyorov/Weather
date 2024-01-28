@@ -30,7 +30,12 @@ def home(request):
     weather_tavsifdata = [data.get_text(strip=True) for data in weather_tavsif]
     weather_yogindata = [data.get_text(strip=True) for data in weather_yogin]
     result = [sublist[0] for sublist in weather_dayInfo]
-    return render(request, 'index.html', {'city': weather_citydata[0], 'today': weather_todaydata[0], 'havo': weather_havodata[0], 'temptoday': weather_temptodaydata[0], 'chiq': weather_quyosh_chiqishidata[0][5], 'bot': weather_quyosh_chiqishidata[0][8], 'namlik': weather_malumotlardata[0][1], 'shamol': weather_malumotlardata[0][4], 'bosim': weather_malumotlardata[0][7], 'days': result[0:7], 'temp': weather_tempdata[0:7], 'tavsif': weather_tavsifdata[0:7], 'yogin': weather_yogindata[0:7]})
+    return render(request, 'index.html', {'city': weather_citydata[0], 'today': weather_todaydata[0], 'havo': weather_havodata[0],
+                                          'temptoday': weather_temptodaydata[0], 'chiq': weather_quyosh_chiqishidata[0][5],
+                                          'bot': weather_quyosh_chiqishidata[0][8], 'namlik': weather_malumotlardata[0][1],
+                                          'shamol': weather_malumotlardata[0][4], 'bosim': weather_malumotlardata[0][7],
+                                          'days': result[0:7], 'temp': weather_tempdata[0:7], 'tavsif': weather_tavsifdata[0:7],
+                                          'yogin': weather_yogindata[0:7]})
 
 
 def andijon(request):
@@ -473,5 +478,3 @@ def nukus(request):
                    'bot': weather_quyosh_chiqishidata[0][8], 'namlik': weather_malumotlardata[0][1],
                    'shamol': weather_malumotlardata[0][4], 'bosim': weather_malumotlardata[0][7], 'days': result[0:7],
                    'temp': weather_tempdata[0:7], 'tavsif': weather_tavsifdata[0:7], 'yogin': weather_yogindata[0:7]})
-
-
